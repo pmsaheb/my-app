@@ -11,7 +11,7 @@ pipeline {
         }
         stage ('compile and package') {
             steps {
-                sh "${mvnhome}/bin/mvn clean package"
+                sh "mvn clean package"
             }
         }
     }
