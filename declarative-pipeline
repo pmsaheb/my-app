@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    environemnt {
+        PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
+    }
     stages {
         stage('SCM Checkout') {
             steps {
@@ -8,7 +11,7 @@ pipeline {
         }
         stage ('compile and package') {
             steps {
-                def mvnhome = tool name: 'maven-1',type:'maven'
+                // def mvnhome = tool name: 'maven-1',type:'maven'
                 sh "${mvnhome}/bin/mvn clean package"
             }
         }
