@@ -6,5 +6,9 @@ pipeline {
                 echo 'Chekcing out source code'
             }
         }
+        stage ('compile and package') {
+            def MAVEN_HOME = tool name: 'maven-1',type:maven'
+            sh "${MAVEN_HOME}/bin/mvn clean package"
+        }
     }
 }
