@@ -11,7 +11,6 @@ pipeline {
         }
         stage ('compile and package') {
             steps {
-                // def mvnhome = tool name: 'maven-1',type:'maven'
                 sh "${mvnhome}/bin/mvn clean package"
             }
         }
