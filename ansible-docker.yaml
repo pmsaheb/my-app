@@ -1,0 +1,14 @@
+---
+- name: Create and run a Docker container using a custom image
+  hosts: dev 
+  become: true 
+  
+  tasks:
+    - name: Start the container
+      docker_container:
+        name: myansible01
+        image: "hellosahebpm/mywebapp:${DOCKER_TAG}"
+        state: started
+        published_ports:
+          - 0.0.0.0:80:80
+      
