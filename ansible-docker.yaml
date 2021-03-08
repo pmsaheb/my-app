@@ -4,12 +4,12 @@
   become: true 
   
   tasks:
-    - name: Install Python pip
+    - name: Install Python pip3
       apt:
         name: python-pip
         state: present
     - name: Install docker-py python module
-      pip:
+      pip3:
         name: docker-py
         state: present
     - name: Start the container
