@@ -6,7 +6,7 @@
   tasks:
     - name: Install Python pip3
       apt:
-        name: python-pip
+        name: python-pip3
         state: present
     - name: Install docker-py python module
       pip3:
